@@ -1,0 +1,11 @@
+*.bak
+*.pyc
+*.pyo
+*.idea
+*.egg-info
+.settings
+files/
+
+.credentials.json
+config.yaml
+characters.yaml

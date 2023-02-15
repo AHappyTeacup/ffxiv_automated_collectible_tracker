@@ -1,0 +1,198 @@
+# Colours that I used are from:
+# http://mkweb.bcgsc.ca/colorblind/img/colorblindness.palettes.v11_2.png
+Colours:
+  # The colour for the headings row.
+  # Plum.
+  ColourHeading:
+    r: 255
+    g: 178
+    b: 253
+  # The colour for a cell when the character has the column item.
+  # Jeepers Creepers.
+  ColourHasItem:
+    r: 0
+    g: 159
+    b: 129
+  # The colour for a cell when the character does not have the column item.
+  # Aquamarine.
+  ColourNotItem:
+    r: 226
+    g: 1
+    b: 52
+  # The colour for the column with the characters names.
+  # Capri
+  ColourCharCol:
+    r: 0
+    g: 194
+    b: 249
+  # The colour for the column with the characters names when that character has all the items.
+  # Dodger Blue.
+  ColourAllItem:
+    r: 0
+    g: 141
+    b: 249
+# Row and Column for the headings and names, per the labels on Google sheets.
+HeadingsRow: 1
+NamesColumn: A
+# All the spreadsheets.
+Spreadsheets:
+  # The ID from your spreadsheet URL.
+  # https://docs.google.com/spreadsheets/d/{spreadsheet_id}/edit#gid=0
+- spreadsheetId: spreadsheet_id
+  sheets:
+  - title: A Realm Reborn
+    Values:
+    - DisplayName: Ifrit  # The bolded text in the cell.
+      ItemName: Aithon  # The name of the item on Lodestone.
+      ItemType: Mount  # What kind of item - "Achievement", "Mount", or "Minion".
+    - DisplayName: Titan
+      ItemName: Gullfaxi
+      ItemType: Mount
+    - DisplayName: Garuda
+      ItemName: Xanthos
+      ItemType: Mount
+    - DisplayName: Leviathan
+      ItemName: Enbarr
+      ItemType: Mount
+    - DisplayName: Ramuh
+      ItemName: Markab
+      ItemType: Mount
+    - DisplayName: Shiva
+      ItemName: Boreas
+      ItemType: Mount
+    - DisplayName: All
+      ItemName: Kirin
+      ItemType: Mount
+    - DisplayName: Nightmare
+      ItemName: Nightmare
+      ItemType: Mount
+  - title: Heavensward
+    Values:
+    - DisplayName: Ravana
+      ItemName: Rose Lanner
+      ItemType: Mount
+    - DisplayName: Bismarck
+      ItemName: White Lanner
+      ItemType: Mount
+    - DisplayName: Thordan
+      ItemName: Round Lanner
+      ItemType: Mount
+    - DisplayName: Sephirot
+      ItemName: Warring Lanner
+      ItemType: Mount
+    - DisplayName: Nidhogg
+      ItemName: Dark Lanner
+      ItemType: Mount
+    - DisplayName: Sophia
+      ItemName: Sophic Lanner
+      ItemType: Mount
+    - DisplayName: Zurvan
+      ItemName: Demonic Lanner
+      ItemType: Mount
+    - DisplayName: All
+      ItemName: Firebird
+      ItemType: Mount
+  - title: Stormblood
+    Values:
+    - DisplayName: Susano
+      ItemName: Reveling Kamuy
+      ItemType: Mount
+    - DisplayName: Lakshmi
+      ItemName: Blissful Kamuy
+      ItemType: Mount
+    - DisplayName: Shinryu
+      ItemName: Legendary Kamuy
+      ItemType: Mount
+    - DisplayName: Byakko
+      ItemName: Auspicious Kamuy
+      ItemType: Mount
+    - DisplayName: Tsukuyomi
+      ItemName: Lunar Kamuy
+      ItemType: Mount
+    - DisplayName: Suzaku
+      ItemName: Euphonious Kamuy
+      ItemType: Mount
+    - DisplayName: Seiryu
+      ItemName: Hallowed Kamuy
+      ItemType: Mount
+    - DisplayName: All
+      ItemName: Kamuy Of The Nine Tails
+      ItemType: Mount
+    - DisplayName: Monster Hunter
+      ItemName: Rathalos
+      ItemType: Mount
+  - title: Shadowbringers
+    Values:
+    - DisplayName: Titania
+      ItemName: Fae Gwiber
+      ItemType: Mount
+    - DisplayName: Innocence
+      ItemName: Innocent Gwiber
+      ItemType: Mount
+    - DisplayName: Hades
+      ItemName: Shadow Gwiber
+      ItemType: Mount
+    - DisplayName: Ruby Weapon
+      ItemName: Ruby Gwiber
+      ItemType: Mount
+    - DisplayName: Warrior of Light
+      ItemName: Gwiber Of Light
+      ItemType: Mount
+    - DisplayName: Emerald Weapon
+      ItemName: Emerald Gwiber
+      ItemType: Mount
+    - DisplayName: Diamond Weapon
+      ItemName: Diamond Gwiber
+      ItemType: Mount
+    - DisplayName: All
+      ItemName: Landerwaffe
+      ItemType: Mount
+  - title: Endwalker
+    Values:
+    - DisplayName: Zodiark
+      ItemName: Lynx Of Eternal Darkness
+      ItemType: Mount
+    - DisplayName: Hydaelyn
+      ItemName: Lynx Of Divine Light
+      ItemType: Mount
+    - DisplayName: Endsinger
+      ItemName: Bluefeather Lynx
+      ItemType: Mount
+    - DisplayName: Barbariccia
+      ItemName: Lynx of Imperious Wind
+      ItemType: Mount
+    - DisplayName: Rubicante
+      ItemName: Lynx of Righteous Fire
+      ItemType: Mount
+  - title: Raids
+    Values:
+    - DisplayName: A4S
+      ItemName: Gobwalker
+      ItemType: Mount
+    - DisplayName: A12S
+      ItemName: Arrhidaeus
+      ItemType: Mount
+    - DisplayName: O4S
+      ItemName: Alte Roite
+      ItemType: Mount
+    - DisplayName: O8S
+      ItemName: Air Force
+      ItemType: Mount
+    - DisplayName: O12S
+      ItemName: Model O
+      ItemType: Mount
+    - DisplayName: P4S
+      ItemName: Skyslipper
+      ItemType: Mount
+    - DisplayName: P8S
+      ItemName: Ramuh
+      ItemType: Mount
+    - DisplayName: P12S
+      ItemName: Eden
+      ItemType: Mount
+    - DisplayName: P4S
+      ItemName: Demi-Phoinix
+      ItemType: Mount
+    - DisplayName: P8S
+      ItemName: Sunforged
+      ItemType: Mount
