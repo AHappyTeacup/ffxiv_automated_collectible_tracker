@@ -49,7 +49,7 @@ def get_char_id(char_name: str, world: str) -> str:
     :return: String. The lodestone ID for a character.
     """
     logger.info(f"Getting character id for '{char_name}'.")
-    response = requests.get(char_uri, params={"q": char_name, "worldname": world})
+    response = requests.get(char_uri, params={"q": f"\"{char_name}\"", "worldname": world})
     response_soup = bs(response.text, "html.parser")
     entries = response_soup.find_all("a", class_="entry__link")
     try:
