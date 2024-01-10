@@ -159,10 +159,19 @@ Spreadsheets:
       ItemName: Bluefeather Lynx
       ItemType: Mount
     - DisplayName: Barbariccia
-      ItemName: Lynx of Imperious Wind
+      ItemName: Lynx Of Imperious Wind
       ItemType: Mount
     - DisplayName: Rubicante
-      ItemName: Lynx of Righteous Fire
+      ItemName: Lynx Of Righteous Fire
+      ItemType: Mount
+    - DisplayName: Golbez
+      ItemName: Lynx Of Fallen Shadow
+      ItemType: Mount
+    - DisplayName: Zeromus
+      ItemName: Lynx Of Abyssal Grief
+      ItemType: Mount
+    - DisplayName: All
+      ItemName: Apocryphal Bahamut
       ItemType: Mount
   - title: Raids
     Values:
@@ -195,4 +204,7 @@ Spreadsheets:
       ItemType: Mount
     - DisplayName: P8S
       ItemName: Sunforged
+      ItemType: Mount
+    - DisplayName: P12S
+      ItemName: Megaloambystoma
       ItemType: Mount
