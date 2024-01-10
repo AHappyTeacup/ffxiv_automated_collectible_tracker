@@ -48,8 +48,14 @@ Using pip, or otherwise, install [poetry](https://python-poetry.org/) (`pip inst
 In the directory where you've downloaded this repo, run `poetry install` in your terminal to install the requirements listed in poetry.lock.
 
 ### Google Sheets API Key
-This assumes you have a google account since you're using Google Spreadsheets. \
-Just follow [this video](https://www.youtube.com/watch?v=ddf5Z0aQPzY&t=63s) from 1:03 to 3:40.
+This assumes you have a Google account since you're using Google Spreadsheets. \
+In summary, you want:
+- Access to [https://console.cloud.google.com/](https://console.cloud.google.com/)
+- Create a Service Account
+- Go to [https://console.cloud.google.com/apis/credentials](https://console.cloud.google.com/apis/credentials)
+- Use the blue "create credentials" button in the top left. Click it and select "service account key."
+   - Choose the service account you want, and select "JSON" as the key type.
+- Move the JSON file to the directory where you've downloaded this repo, and rename it '.credentials.json', to make life easier.
 
 ### config.yaml
 There is an example configuration file in the repo. \
