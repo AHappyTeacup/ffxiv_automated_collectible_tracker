@@ -190,13 +190,13 @@ Spreadsheets:
     - DisplayName: O12S
       ItemName: Model O
       ItemType: Mount
-    - DisplayName: P4S
+    - DisplayName: E4S
       ItemName: Skyslipper
       ItemType: Mount
-    - DisplayName: P8S
+    - DisplayName: E8S
       ItemName: Ramuh
       ItemType: Mount
-    - DisplayName: P12S
+    - DisplayName: E12S
       ItemName: Eden
       ItemType: Mount
     - DisplayName: P4S
