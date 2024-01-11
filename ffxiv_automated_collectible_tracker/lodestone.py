@@ -4,6 +4,7 @@ source.
 """
 import asyncio
 import aiohttp
+import copy
 import logging
 import re
 import requests
@@ -60,27 +61,28 @@ def get_char_id(char_name: str, world: str) -> str:
         logger.error(e)
 
 
-async def _get_url_soup(session: aiohttp.ClientSession, url: str) -> bs:
-    """Asynchronously keep requesting a URL until we get a 200, or a response other than a 429.
-    Then run BeautifulSoup on the results.
+async def _get_url_soup(session: aiohttp.ClientSession, url_list: [str]) -> [bs]:
+    """Asynchronously pop a url from the queue, request it, and run BeautifulSoup on the results.
 
     :param session: An async http session.
-    :param url: The URL to query.
+    :param url_list: The list of URLs to be queried.
     :return: BeautifulSoup.
     """
-    logger.info(f"Getting URL: {url}...")
-    count = 1
-    data = None
-    while data is None:
-        async with session.get(url) as response:
-            data = await response.text()
-        if response.status == 429:
-            await asyncio.sleep(1)
-            logger.info(f"Too Many Requests. {count}'th retry: {url}...")
-            count += 1
-            data = None
-    soup = bs(data, "html.parser")
-    return soup
+    soups = []
+    while url_list:
+        url = url_list.pop()
+        logger.info(f"Getting URL: {url}...")
+        data = None
+        while data is None:
+            async with session.get(url) as response:
+                data = await response.text()
+            if response.status == 429:
+                await asyncio.sleep(1)
+                logger.info(f"Too Many Requests. Retrying {url}...")
+                data = None
+        soup = bs(data, "html.parser")
+        soups.append(soup)
+    return soups
 
 
 async def _batch_get_url_soups(url_list: [str]) -> [bs]:
@@ -89,13 +91,11 @@ async def _batch_get_url_soups(url_list: [str]) -> [bs]:
     :param url_list: A list of URL strings.
     :return:  A list of BeautifulSoups.
     """
-    # soups = []
-    # selection_length = len(url_list)
-    # async with aiohttp.ClientSession() as session:
-    #     for selection in [url_list[i:i + selection_length] for i in range(0, len(url_list), selection_length)]:
-    #         soups.extend(await asyncio.gather(*[._get_url_soup(session, url) for url in selection]))
+    this_url_list = copy.deepcopy(url_list)
+    soups = []
     async with aiohttp.ClientSession() as session:
-        soups = await asyncio.gather(*[_get_url_soup(session, url) for url in url_list])
+        soup_gathering_tasks = [_get_url_soup(session, this_url_list) for _ in range(10)]
+        [soups.extend(subset_of_soups) for subset_of_soups in await asyncio.gather(*soup_gathering_tasks)]
     return soups
 
 

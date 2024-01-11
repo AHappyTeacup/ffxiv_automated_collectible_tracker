@@ -1,5 +1,6 @@
 import json
 import logging
+import time
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
@@ -221,7 +222,16 @@ class GSheets:
             ranges=["'%s'" % sheet_name],
             includeGridData=True
         )
-        result = spreadsheets_values_get_http.execute()
+        result = None
+        while result is None:
+            try:
+                result = spreadsheets_values_get_http.execute()
+            except HttpError as e:
+                if e.status_code != 429:
+                    raise e
+            time.sleep(1)
+            logger.info(f"Too Many Requests to Google...")
+            result = None
         logger.debug(result)
         sheet = result["sheets"][0]
         logger.debug(f"Found Sheet: {sheet}")
